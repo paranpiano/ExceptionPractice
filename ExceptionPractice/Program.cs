@@ -12,7 +12,12 @@ namespace ExceptionPractice
         {
             try
             {
-                Console.WriteLine(Arthimetic(-1, 0).ToString());
+                Console.WriteLine(Arthimetic(10, 0).ToString());
+            }
+            catch(DivideByZeroException ex)
+            {
+                Console.WriteLine("Drivde by zero not possible!");
+                Console.WriteLine(Arthimetic(10, 1));
             }
             catch (Exception e)
             {
@@ -35,6 +40,11 @@ namespace ExceptionPractice
             if ((num1 < 0) || (num2 < 0))
             {
                 throw new Exception("Negative number not allowed");
+            }
+
+            if (num1  == num2)
+            {
+                throw new Exception("Numerator and denomorater is the same");
             }
 
             return num1/num2;
