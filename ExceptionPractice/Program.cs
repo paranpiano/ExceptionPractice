@@ -36,7 +36,15 @@ namespace ExceptionPractice
 
         private static int Arthimetic(int num1, int num2)
         {
-            return Devide(num1, num2);
+            try
+            {
+                return Devide(num1, num2);
+            }
+            catch (Exception e)
+            {
+                //throw e;  
+                throw new Exception(" Something bad happended ! " + e.StackTrace);
+            }
         }
 
         private static int Devide(int num1, int num2)
