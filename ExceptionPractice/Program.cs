@@ -12,7 +12,11 @@ namespace ExceptionPractice
         {
             try
             {
-                Console.WriteLine(Arthimetic(10, 0).ToString());
+                Console.WriteLine(Arthimetic(10, 10).ToString());
+            }
+            catch (NumDenoEqualException ne)
+            {
+                Console.WriteLine("NumDenoEqualException has occured!");
             }
             catch(DivideByZeroException ex)
             {
@@ -44,10 +48,11 @@ namespace ExceptionPractice
 
             if (num1  == num2)
             {
-                throw new Exception("Numerator and denomorater is the same");
+                throw new NumDenoEqualException("Numerator and denomorater is the same");
             }
 
             return num1/num2;
         }
     }
+
 }
