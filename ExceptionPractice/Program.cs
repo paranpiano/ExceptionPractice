@@ -12,11 +12,12 @@ namespace ExceptionPractice
         {
             try
             {
-                Console.WriteLine(Arthimetic(10, 0).ToString());
+                Console.WriteLine(Arthimetic(-1, 0).ToString());
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                //Console.WriteLine(e.StackTrace);
             }
             finally
             {
@@ -31,6 +32,11 @@ namespace ExceptionPractice
 
         private static int Devide(int num1, int num2)
         {
+            if ((num1 < 0) || (num2 < 0))
+            {
+                throw new Exception("Negative number not allowed");
+            }
+
             return num1/num2;
         }
     }
