@@ -10,8 +10,16 @@ namespace ExceptionPractice
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Devide(10, 5).ToString());
-            Console.WriteLine("thank you");
+            try
+            {
+                Console.WriteLine(Devide(10, 0).ToString());
+                Console.WriteLine("thank you");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error has occurred, Sorry!");
+            }
+
         }
 
         private static int Devide(int v1, int v2)
