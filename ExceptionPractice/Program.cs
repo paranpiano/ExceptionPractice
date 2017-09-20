@@ -12,19 +12,26 @@ namespace ExceptionPractice
         {
             try
             {
-                Console.WriteLine(Devide(10, 0).ToString());
-                Console.WriteLine("thank you");
+                Console.WriteLine(Arthimetic(10, 0).ToString());
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error has occurred, Sorry!");
+                Console.WriteLine(e.Message);
             }
-
+            finally
+            {
+                Console.WriteLine("thank you");
+            }
         }
 
-        private static int Devide(int v1, int v2)
+        private static int Arthimetic(int num1, int num2)
         {
-            return v1/v2;
+            return Devide(num1, num2);
+        }
+
+        private static int Devide(int num1, int num2)
+        {
+            return num1/num2;
         }
     }
 }
